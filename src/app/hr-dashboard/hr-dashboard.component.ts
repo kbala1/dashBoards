@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {FormControl} from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-hr-dashboard',
   templateUrl: './hr-dashboard.component.html',
@@ -7,25 +8,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HrDashboardComponent implements OnInit {
 
-  name: string;
-  gender: string;
-  jobLevel: number;
-  designation: string;
-  productUnit: string;
-  location: string;
-  workEmail: string;
+  name = new FormControl('');
+  gender = new FormControl('');
+  jobLevel = new FormControl('');
+  designation = new FormControl('');
+  productUnit = new FormControl('');
+  location = new FormControl('');
+  workEmail = new FormControl('');
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  submit() {
+  submit(): void {
+    // call api
+    console.log(this.name.value, this.designation, this.jobLevel, this.productUnit, this.location, this.workEmail);
+    console.log("value submitted");
+    const body = {
+      api:"add_emp_data",
+      data: {
+        emp_name: this.name.value,
+        gender: this.gender.value,
+        job_level: this.jobLevel.value,
+        designation: this.designation.value,
+        pu: this.productUnit.value,
+        base_location: this.location.value,
+        mail_id: this.workEmail.value,
+        // available:
+      }
+    };
 
+    this.sendToApi(body);
   }
 
-  sendToApi(): void {
-
+  sendToApi(body: {}): void {
+    this.http
+      .post('', body)
+      .subscribe(response => {
+        console.log(response);
+      });
   }
+
 
 }

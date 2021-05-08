@@ -5,16 +5,29 @@
 }
 
 .one {
-  grid-template-columns: 65% 35%;
-  grid-column-gap: 20px;
+  /*!*grid-template-columns: 65% 35%;*!*/
+  /*grid-column-gap: 20px;*/
+  width: 40%;
 }
 .two {
   grid-auto-columns: auto;
   grid-column-gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .form-header {
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.three {
+  grid-auto-columns: auto;
+  grid-column-gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
 }
 
