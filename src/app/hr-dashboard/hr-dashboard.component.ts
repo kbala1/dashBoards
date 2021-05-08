@@ -44,7 +44,7 @@ export class HrDashboardComponent implements OnInit {
 
   sendToApi(body: {}): void {
     this.http
-      .post('', body)
+      .post('https://ot7yoxh5c2.execute-api.us-east-1.amazonaws.com/Test', body)
       .subscribe(response => {
         console.log(response);
       });
