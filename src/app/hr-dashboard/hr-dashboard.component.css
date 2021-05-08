@@ -1,0 +1,20 @@
+.container {
+  display: grid;
+  grid-template-rows: 25% 25% 25% 25%;
+  gap: 20px;
+}
+
+.one {
+  grid-template-columns: 65% 35%;
+  grid-column-gap: 20px;
+}
+.two {
+  grid-auto-columns: auto;
+  grid-column-gap: 20px;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+}
+

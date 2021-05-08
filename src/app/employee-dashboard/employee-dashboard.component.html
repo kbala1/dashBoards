@@ -1,0 +1,133 @@
+<!--<form class="form-inline">-->
+<!--  <div class="form-group mb-2">-->
+<!--    <label for="staticEmail2" class="sr-only">Email</label>-->
+<!--    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">-->
+<!--  </div>-->
+<!--  <div class="form-group mx-sm-3 mb-2">-->
+<!--    <label for="inputPassword2" class="sr-only">Password</label>-->
+<!--    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">-->
+<!--  </div>-->
+<!--  <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>-->
+
+
+<!--<form class="needs-validation" novalidate>-->
+<!--  <div class="form-row">-->
+<!--    <div class="col-md-4 mb-3">-->
+<!--      <label for="validationCustom01">First name</label>-->
+<!--      <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>-->
+<!--      <div class="valid-feedback">-->
+<!--        Looks good!-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-md-4 mb-3">-->
+<!--      <label for="validationCustom02">Last name</label>-->
+<!--      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>-->
+<!--      <div class="valid-feedback">-->
+<!--        Looks good!-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-md-4 mb-3">-->
+<!--      <label for="validationCustomUsername">Username</label>-->
+<!--      <div class="input-group">-->
+<!--        <div class="input-group-prepend">-->
+<!--          <span class="input-group-text" id="inputGroupPrepend">@</span>-->
+<!--        </div>-->
+<!--        <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>-->
+<!--        <div class="invalid-feedback">-->
+<!--          Please choose a username.-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<div class="container">
+  <div>
+  <h2>Update your skill details</h2>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Skill Name</th>
+      <th scope="col">Experience</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let s of skills; index as i">
+      <th scope="row">{{i+1}}</th>
+      <td>{{s.skill}}</td>
+      <td>{{s.experience}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <form>
+    <div class="form-group">
+      <label for="skillName">Enter skill name</label>
+      <input type="skill" id="skillName" [formControl]="skill" class="form-control mx-sm-3 w-auto">
+      <small id="skillNameInline" class="text-muted">
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="experience">Experience</label>
+      <input type="experience" id="experience" [formControl]="experience" class="form-control mx-sm-3 w-auto">
+      <small id="experienceInline" class="text-muted">
+      </small>
+    </div>
+
+    <div class="form-row">
+      <button class="btn btn-primary form-col addButton" type="click" (click)="addSkill()">Add</button>
+      <button class="btn btn-primary form-col resetButton" type="click" (click)="reset()">Reset</button>
+    </div>
+
+    <div>
+      <button class="btn btn-primary" type="submit" (click)="submit()">Submit</button>
+    </div>
+  </form>
+</div>
+
+<div>
+  <h2>Update your training details</h2>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Skill Name</th>
+      <th scope="col">Duration in years</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let t of trainingDetails; index as j">
+      <th scope="row">{{j+1}}</th>
+      <td>{{t.training}}</td>
+      <td>{{t.duration}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <form>
+    <div class="form-group">
+      <label for="skillTraining">Enter skill name</label>
+      <input type="skill" id="skillTraining" [formControl]="training" class="form-control mx-sm-3 w-auto">
+      <small id="skillTrainingInline" class="text-muted">
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="experience">Training Duration</label>
+      <input type="duration" id="duration" [formControl]="duration" class="form-control mx-sm-3 w-auto">
+      <small id="durationInline" class="text-muted">
+      </small>
+    </div>
+
+    <div class="form-row">
+      <button class="btn btn-primary form-col addButton" type="click" (click)="addTrainingDetail()">Add</button>
+      <button class="btn btn-primary form-col resetButton" type="click" (click)="resetTraining()">Reset</button>
+    </div>
+
+    <div>
+      <button class="btn btn-primary" type="submit" (click)="submitTraining()">Submit</button>
+    </div>
+  </form>
+</div>
+</div>
